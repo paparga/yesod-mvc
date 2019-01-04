@@ -3,10 +3,23 @@
 After installing Postgres, run:
 
 ```
-createuser yesod-mvc --password yesod-mvc --superuser
+createuser yesod-mvc --password --superuser (poner 'yesod-mvc' en el prompt)
 createdb yesod-mvc
 createdb yesod-mvc_test
 ```
+
+Si no funciona, entrar a psql con el usuario yesod-mvc y correr
+
+```
+ALTER ROLE "yesod-mvc" WITH PASSWORD 'yesod-mvc';
+```
+
+Si no se puede entrar a ya modificar la conf de postgresql
+
+```
+sudo gedit /etc/postgresql/10/main/pg_hba.conf
+```
+
 
 ## Haskell Setup
 
